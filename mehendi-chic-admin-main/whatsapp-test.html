@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Test - +91 6353453387</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .test-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .test-button:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+        }
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>WhatsApp Link Test</h1>
+    <p>Testing WhatsApp link for: <strong>+91 6353453387</strong></p>
+
+    <div class="info">
+        <h3>🔍 Test Results:</h3>
+        <p><strong>WhatsApp URL:</strong> https://wa.me/916353453387</p>
+        <p><strong>Phone Number:</strong> +91 6353453387</p>
+        <p><strong>Format:</strong> Country code (91) + number (6353453387)</p>
+    </div>
+
+    <div class="warning">
+        <h3>⚠️ Important Notes:</h3>
+        <ul style="text-align: left;">
+            <li><strong>WhatsApp Account Required:</strong> The number +91 6353453387 must have WhatsApp installed and activated</li>
+            <li><strong>Business Account:</strong> If this is a business number, make sure it's verified</li>
+            <li><strong>Network Issues:</strong> WhatsApp web might not work in some regions</li>
+            <li><strong>Mobile Testing:</strong> Test on actual mobile device for best results</li>
+        </ul>
+    </div>
+
+    <h2>🧪 Test WhatsApp Link</h2>
+
+    <a href="https://wa.me/916353453387" target="_blank" rel="noopener noreferrer" class="test-button">
+        📱 Open WhatsApp Chat
+    </a>
+
+    <br><br>
+
+    <a href="https://wa.me/916353453387?text=Hello%20from%20website%20test" target="_blank" rel="noopener noreferrer" class="test-button">
+        💬 Open with Pre-filled Message
+    </a>
+
+    <br><br>
+
+    <a href="https://api.whatsapp.com/send?phone=916353453387" target="_blank" rel="noopener noreferrer" class="test-button">
+        🔄 Alternative WhatsApp Link
+    </a>
+
+    <div class="info">
+        <h3>📋 Troubleshooting:</h3>
+        <ol style="text-align: left;">
+            <li>Click the WhatsApp link above</li>
+            <li>If it doesn't open WhatsApp, the number might not have WhatsApp</li>
+            <li>Try the alternative link format</li>
+            <li>Test on mobile device instead of desktop</li>
+            <li>Check if WhatsApp is installed on your device</li>
+        </ol>
+    </div>
+
+    <div class="info">
+        <h3>✅ Expected Behavior:</h3>
+        <ul style="text-align: left;">
+            <li><strong>Mobile:</strong> Opens WhatsApp app directly</li>
+            <li><strong>Desktop:</strong> Opens web.whatsapp.com</li>
+            <li><strong>Chat:</strong> Pre-filled with the number</li>
+            <li><strong>Fallback:</strong> Shows "Continue to Chat" if WhatsApp not installed</li>
+        </ul>
+    </div>
+
+    <script>
+        // Track link clicks for debugging
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                console.log('WhatsApp link clicked:', this.href);
+                console.log('Target:', this.target);
+                console.log('User Agent:', navigator.userAgent);
+
+                // Small delay to show feedback
+                const originalText = this.textContent;
+                this.textContent = 'Opening WhatsApp...';
+                this.style.pointerEvents = 'none';
+
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.pointerEvents = 'auto';
+                }, 3000);
+            });
+        });
+
+        // Check if WhatsApp is available
+        function checkWhatsAppSupport() {
+            const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+            console.log('Device Type:', isMobile ? 'Mobile' : 'Desktop');
+            console.log('iOS Device:', isIOS ? 'Yes' : 'No');
+
+            if (isMobile && !isIOS) {
+                console.log('✅ Android device - WhatsApp app should open');
+            } else if (isIOS) {
+                console.log('✅ iOS device - WhatsApp app should open');
+            } else {
+                console.log('💻 Desktop - WhatsApp web should open');
+            }
+        }
+
+        // Run checks on page load
+        checkWhatsAppSupport();
+
+        console.log('WhatsApp Test Page Loaded');
+        console.log('Test URL: https://wa.me/916353453387');
+        console.log('Phone: +91 6353453387');
+    </script>
+</body>
+</html>

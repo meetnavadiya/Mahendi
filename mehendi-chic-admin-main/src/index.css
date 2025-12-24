@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Mehendi Wedding Theme - Light Mode */
+    --background: 40 33% 97%;
+    --foreground: 150 45% 15%;
+
+    --card: 40 30% 95%;
+    --card-foreground: 150 45% 15%;
+
+    --popover: 40 33% 97%;
+    --popover-foreground: 150 45% 15%;
+
+    /* Deep Mehendi Green */
+    --primary: 150 48% 20%;
+    --primary-foreground: 40 30% 95%;
+
+    /* Gold Accent */
+    --secondary: 30 45% 65%;
+    --secondary-foreground: 150 45% 15%;
+
+    /* Soft Ivory */
+    --muted: 35 25% 90%;
+    --muted-foreground: 150 20% 40%;
+
+    /* Rich Gold */
+    --accent: 35 55% 55%;
+    --accent-foreground: 150 45% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 30% 85%;
+    --input: 35 30% 85%;
+    --ring: 150 48% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gold: 35 55% 65%;
+    --gold-light: 40 60% 80%;
+    --gold-dark: 30 50% 45%;
+    --mehendi-dark: 150 55% 12%;
+    --mehendi-light: 150 35% 30%;
+    --ivory: 40 33% 97%;
+    --cream: 35 30% 92%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(35, 55%, 65%) 0%, hsl(40, 60%, 75%) 100%);
+    --gradient-mehendi: linear-gradient(135deg, hsl(150, 48%, 20%) 0%, hsl(150, 40%, 28%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(40, 33%, 97%) 0%, hsl(35, 30%, 92%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(150 20% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(150 20% 20% / 0.08), 0 2px 4px -2px hsl(150 20% 20% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(150 20% 20% / 0.08), 0 4px 6px -4px hsl(150 20% 20% / 0.05);
+    --shadow-gold: 0 4px 14px -3px hsl(35 55% 55% / 0.25);
+    --shadow-card: 0 2px 8px -2px hsl(150 20% 20% / 0.08);
+
+    /* Sidebar */
+    --sidebar-background: 40 30% 95%;
+    --sidebar-foreground: 150 45% 15%;
+    --sidebar-primary: 150 48% 20%;
+    --sidebar-primary-foreground: 40 30% 95%;
+    --sidebar-accent: 35 55% 55%;
+    --sidebar-accent-foreground: 150 45% 10%;
+    --sidebar-border: 35 30% 85%;
+    --sidebar-ring: 150 48% 25%;
+  }
+
+  .dark {
+    --background: 150 30% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 150 25% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 150 25% 12%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 35 55% 65%;
+    --primary-foreground: 150 45% 10%;
+
+    --secondary: 150 35% 20%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 150 20% 18%;
+    --muted-foreground: 40 20% 70%;
+
+    --accent: 35 55% 55%;
+    --accent-foreground: 150 45% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 20%;
+    --input: 150 20% 20%;
+    --ring: 35 55% 65%;
+
+    --sidebar-background: 150 25% 10%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 35 55% 65%;
+    --sidebar-primary-foreground: 150 45% 10%;
+    --sidebar-accent: 150 35% 20%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 150 20% 20%;
+    --sidebar-ring: 35 55% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .gradient-mehendi {
+    background: var(--gradient-mehendi);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .text-gold {
+    color: hsl(var(--accent));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--accent));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--accent));
+  }
+
+  /* Elegant hover effect */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Gold shimmer animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--accent)) 0%,
+      hsl(var(--gold-light)) 50%,
+      hsl(var(--accent)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  /* Scale in animation */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+}

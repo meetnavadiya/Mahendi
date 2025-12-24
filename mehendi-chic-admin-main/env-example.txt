@@ -1,0 +1,13 @@
+# Supabase Configuration for Local Development
+# Replace these with your actual Supabase project credentials
+
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key-here
+
+# Instructions:
+# 1. Go to https://supabase.com/dashboard
+# 2. Select your project
+# 3. Go to Settings → API
+# 4. Copy the Project URL and anon public key
+# 5. Replace the placeholder values above
+# 6. Save this file and restart the server: npm run dev
